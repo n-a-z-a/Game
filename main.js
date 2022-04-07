@@ -4,16 +4,17 @@ const start = document.getElementById("start");
 const timer = document.getElementById("timer");
 const reset = document.getElementById("reset");
 const submit = document.getElementById("submit");
-const gameOver = document.getElementById("gameOver");
+const message = document.getElementById("message");
 
 let question = document.getElementById("question");
 let answers = document.querySelectorAll(".answer");
-let score = document.getElementById("points");
+let score = document.getElementById("score");
 
 let chosenAnswer = "";
 
 let currentQuestion = 0;
 
+const maximumScore = questions.length;
 
 
 //the player starts the game and the first question comes up on screen 
@@ -22,11 +23,11 @@ start.addEventListener ("click", (e) => {
     question.innerHTML = questions[currentQuestion].question
     answers.forEach((answerButton, index) => {
         answerButton.innerHTML = questions[currentQuestion].answers[index];
+    score.innerHTML = `${currentQuestion}/${maximumScore}`;
     })
 })
 
 //check if the submitted answer is the right one
-
 
 answers.forEach(item => {
     item.addEventListener ("click", (e) => {
@@ -38,9 +39,6 @@ answers.forEach(item => {
 //the player chooses an answer and submits it
 
 submit.addEventListener ("click", (e) => {
-    // console.log (questionNumber)
-    // console.log (questions[0].right_answer)
-    // console.log(questions[questionNumber].right_answer)
     if (questions[currentQuestion].right_answer == chosenAnswer) {
         //if the submitted answer is the right one then show the next question and the next answer
             currentQuestion++
@@ -50,16 +48,15 @@ submit.addEventListener ("click", (e) => {
                     answerButton.innerHTML = questions[currentQuestion].answers[index]
                 })
             } else {
-                gameOver.innerHTML = "Congratulations! You've won!"
+                message.innerHTML = "Congratulations! You've won!"
             }
+        score.innerHTML = `${currentQuestion}/${maximumScore}`;
         } else {
         //if the submitted answer is wrong then prompt a GameOver pop-up
-            gameOver.innerHTML = "Game Over"
+            message.innerHTML = "Game Over"
         }
 })   
         
-
-
 
 
 // submit.addEventListener ("click")
