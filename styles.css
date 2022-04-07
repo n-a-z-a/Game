@@ -1,0 +1,14 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+#question {
+  border: 10px solid black;
+}
+
+.game-box {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}

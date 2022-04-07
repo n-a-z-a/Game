@@ -1,0 +1,61 @@
+export const questions = [
+    { question: "question n1", 
+    answer_1: "answer n1",
+    answer_2: "answer n2",
+    answer_3: "answer n3",
+    answer_4: "answer n4"},
+
+    { question: "question n2", 
+    answer_1: "answer n1",
+    answer_2: "answer n2",
+    answer_3: "answer n3",
+    answer_4: "answer n4"},
+
+    { question: "question n3", 
+    answer_1: "answer n1",
+    answer_2: "answer n2",
+    answer_3: "answer n3",
+    answer_4: "answer n4"},
+
+    { question: "question n4", 
+    answer_1: "answer n1",
+    answer_2: "answer n2",
+    answer_3: "answer n3",
+    answer_4: "answer n4"},
+
+    { question: "question n5", 
+    answer_1: "answer n1",
+    answer_2: "answer n2",
+    answer_3: "answer n3",
+    answer_4: "answer n4"},
+
+    { question: "question n6", 
+    answer_1: "answer n1",
+    answer_2: "answer n2",
+    answer_3: "answer n3",
+    answer_4: "answer n4"},
+
+    { question: "question n7", 
+    answer_1: "answer n1",
+    answer_2: "answer n2",
+    answer_3: "answer n3",
+    answer_4: "answer n4"},
+
+    { question: "question n8", 
+    answer_1: "answer n1",
+    answer_2: "answer n2",
+    answer_3: "answer n3",
+    answer_4: "answer n4"},
+
+    { question: "question n9", 
+    answer_1: "answer n1",
+    answer_2: "answer n2",
+    answer_3: "answer n3",
+    answer_4: "answer n4"},
+
+    { question: "question n10", 
+    answer_1: "answer n1",
+    answer_2: "answer n2",
+    answer_3: "answer n3",
+    answer_4: "answer n4"},
+]
