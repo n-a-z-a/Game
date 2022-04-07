@@ -11,4 +11,6 @@
   display: grid;
   align-items: center;
   justify-content: center;
+  border-top: 1 vh;
+  row-gap: 1vh;
 }
