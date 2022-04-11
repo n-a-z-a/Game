@@ -1,7 +1,7 @@
 import {questions} from "./questions.js";
 
 const start = document.getElementById("start");
-const timer = document.getElementById("timer");
+const timer = document.getElementById("countdown")
 const reset = document.getElementById("reset");
 const submit = document.getElementById("submit");
 const message = document.getElementById("message");
@@ -17,15 +17,38 @@ let currentQuestion = 0;
 const maximumScore = questions.length;
 
 
+
+//countdown
+let setCountdown;
+const countdown = () => {
+    timer.innerHTML--
+    if (timer.innerHTML==0) {
+        clearInterval(setCountdown)
+    }
+}
+
+const stopTimer = () => {
+    clearInterval(setCountdown)
+}
+
+const startTimer = () => {
+    timer.innerHTML = 15
+    setCountdown = setInterval(countdown,1500)
+}
+
 //the player starts the game and the first question comes up on screen 
 
-start.addEventListener ("click", (e) => {
+start.addEventListener ("click", (e) => { 
+    startTimer();
+    start.innerHTML = "Restart";
     question.innerHTML = questions[currentQuestion].question
     answers.forEach((answerButton, index) => {
         answerButton.innerHTML = questions[currentQuestion].answers[index];
     score.innerHTML = `${currentQuestion}/${maximumScore}`;
     })
-})
+})  
+
+
 
 //check if the submitted answer is the right one
 
@@ -38,11 +61,15 @@ answers.forEach(item => {
 
 //the player chooses an answer and submits it
 
+//can't submit without a selected answer
+
 submit.addEventListener ("click", (e) => {
+    stopTimer()
     if (questions[currentQuestion].right_answer == chosenAnswer) {
         //if the submitted answer is the right one then show the next question and the next answer
             currentQuestion++
             if (currentQuestion < questions.length) {
+                startTimer()
                 question.innerHTML = questions[currentQuestion].question
                 answers.forEach((answerButton, index) => {
                     answerButton.innerHTML = questions[currentQuestion].answers[index]

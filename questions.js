@@ -3,9 +3,9 @@ export const questions = [
     answers: ["yellow", "red", "blue", "green"],
     right_answer: "blue"},
 
-    { question: "what shape is the moon?", 
-    answers: ["triangular", "rectangular", "square", "round"],
-    right_answer: "round"},
+    { question: "what is earth", 
+    answers: ["planet", "star", "continent", "galaxy"],
+    right_answer: "planet"},
 
     { question: "where is england?", 
     answers: ["europe", "america", "asia", "australia"],
