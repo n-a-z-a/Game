@@ -1,7 +1,7 @@
 export const questions = [
-    { question: "what colour is the sky?", 
-    answers: ["yellow", "red", "blue", "green"],
-    right_answer: "blue"},
+    { question: "WHAT COLOR IS THE SKY", 
+    answers: ["YELLOW", "RED", "BLUE", "GREEN"],
+    right_answer: "BLUE"},
 
     { question: "what is earth", 
     answers: ["planet", "star", "continent", "galaxy"],

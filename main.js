@@ -1,24 +1,21 @@
 import {questions} from "./questions.js";
 
-const start = document.getElementById("start");
+const restart = document.getElementById("restart");
 const timer = document.getElementById("countdown")
-const reset = document.getElementById("reset");
 const submit = document.getElementById("submit");
 const message = document.getElementById("message");
 
 let question = document.getElementById("question");
 let answers = document.querySelectorAll(".answer");
 let score = document.getElementById("score");
-
 let chosenAnswer = "";
-
 let currentQuestion = 0;
 
 const maximumScore = questions.length;
 
 
-
 //countdown
+
 let setCountdown;
 const countdown = () => {
     timer.innerHTML--
@@ -36,15 +33,22 @@ const startTimer = () => {
     setCountdown = setInterval(countdown,1500)
 }
 
-//the player starts the game and the first question comes up on screen 
 
-start.addEventListener ("click", (e) => { 
+startTimer();
+question.innerHTML = questions[currentQuestion].question
+answers.forEach((answerButton, index) => {
+    answerButton.innerHTML = questions[currentQuestion].answers[index];
+    score.innerHTML = `0/${maximumScore}`;
+    })
+
+
+
+restart.addEventListener ("click", (e) => { 
     startTimer();
-    start.innerHTML = "Restart";
-    question.innerHTML = questions[currentQuestion].question
+    question.innerHTML = questions[0].question
     answers.forEach((answerButton, index) => {
-        answerButton.innerHTML = questions[currentQuestion].answers[index];
-    score.innerHTML = `${currentQuestion}/${maximumScore}`;
+        answerButton.innerHTML = questions[0].answers[index];
+    score.innerHTML = `0/${maximumScore}`;
     })
 })  
 

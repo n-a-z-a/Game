@@ -1,16 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
 * {
   margin: 0px;
   padding: 0px;
+  background-color: #F1BC52;
+}
+
+#gameTitle_cover {
+  margin-top: 30vh;
+  margin-bottom: 15vh;
+  font-family: Bungee;
+  font-size: 78px;
+  text-align: center;
+  color: #00A8A8;
+  text-shadow: 6px 6px 2px #9AD3DA;
+}
+
+#gameTitle_cover > strong {
+  font-family: Bungee;
+  font-size: 78px;
+  color: #9AD3DA;
+  text-shadow: 6px 6px 2px #00A8A8;
+}
+
+#start {
+  border: 5px solid #00A8A8;
+  text-decoration: none;
+  font-family: Bungee;
+  font-size: 24px;
+  color: #03444A;
+}
+
+#start:hover {
+  color: #9AD3DA;
 }
 
 #question {
-  border: 10px solid black;
+  width: 80vw;
+  height: 20vh;
+  border: 8px solid #00A8A8;
+  background-color: #03444A;
+  color: #F1BC52;
+  font-family: Dosis;
+  font-size: 48px;
+  text-align: center;
+  justify-content: center;
+  line-height: 8vh;
+}
+
+.answer {
+  width: 80vw;
+  height: 10vh;
+  background-color: #00A8A8;
+  color: #F1BC52;
+  border: none;
+  font-family: Dosis;
+  font-size: 28px;
+  display: grid;
+  text-align: center;
+  justify-content: center;
+  line-height: 8vh;
+}
+
+.answer:hover {
+  background-color: #9AD3DA;
+  color: #00A8A8;
+}
+
+.answer:focus {
+  background-color: #03444A;
+  color: #9AD3DA;
+}
+
+#score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3vh;
+  font-family: Dosis;
+  font-size: 22px;
+}
+
+.game-button {
+  border: 3px solid #00A8A8;
+  text-decoration: none;
+  font-family: Bungee;
+  font-size: 16px;
+  color: #03444A;
+}
+
+#countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Dosis;
+  font-size: 32px;
+}
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .game-box {
-  display: grid;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-top: 1 vh;
-  row-gap: 1vh;
+  border-top: 10vh;
+  row-gap: 3vh;
+  font-family: Bungee;
+}
+
+.bottom {
+  margin-top: 1vh;
+  margin-bottom: 2vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-family: Bungee;
 }

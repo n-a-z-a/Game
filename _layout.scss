@@ -1,9 +1,30 @@
+@import "./variables";
 
+
+.cover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .game-box {
-    display: grid;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-top: 1 vh;
-    row-gap: 1vh;   
+    border-top: 10vh;
+    row-gap: 3vh;
+    font-family: Bungee;
+
+}
+
+.bottom {
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    display: flex;
+    align-items:center;
+    justify-content:space-evenly;
+    font-family: Bungee;
 }

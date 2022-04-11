@@ -1,3 +1,91 @@
+@import "./variables";
+
+#gameTitle_cover {
+    margin-top: 30vh;
+    margin-bottom: 15vh;
+    font-family: Bungee;
+    font-size: 78px;
+    text-align: center;
+    color: $color-tertiary;
+    text-shadow: 6px 6px 2px $color-shadow;
+}
+
+#gameTitle_cover > strong {
+    font-family: Bungee;
+    font-size: 78px;
+    color: $color-shadow;
+    text-shadow: 6px 6px 2px $color-tertiary;
+}
+
+#start {
+    border: 5px solid #00A8A8;
+    text-decoration: none;
+    font-family: Bungee;
+    font-size: 24px;
+    color: $color-secondary;
+}
+
+#start:hover {
+    color: $color-shadow;
+}
+
 #question {
-    border: 10px solid black;
+    width: 80vw;
+    height: 20vh;
+    border: 8px solid $color-tertiary;
+    background-color: $color-secondary;
+    color: $color-primary;
+    font-family: Dosis;
+    font-size: 48px;
+    text-align: center;
+    justify-content: center;
+    line-height: 8vh;
+}
+
+.answer {
+    width: 80vw;
+    height: 10vh;
+    background-color: $color-tertiary;
+    color: $color-primary;
+    border: none;
+    font-family: Dosis;
+    font-size: 28px;
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    line-height: 8vh ;
+}
+.answer:hover {
+    background-color: $color-shadow;
+    color: $color-tertiary;
+}
+
+.answer:focus {
+    background-color: $color-secondary;
+    color: $color-shadow;
+}
+
+#score {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    margin-top: 3vh;
+    font-family: Dosis;
+    font-size: 22px;
+}
+
+.game-button {
+    border: 3px solid #00A8A8;
+    text-decoration: none;
+    font-family: Bungee;
+    font-size: 16px;
+    color: $color-secondary;
+}
+
+#countdown{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    font-family: Dosis;
+    font-size: 32px;
 }
