@@ -31,7 +31,7 @@ export const questions = [
     answers: ["505", "WALK AWAY", "BRIANSTORM", "DANCING SHOES"],
     right_answer: "WALK AWAY"},
 
-    { question: "UK'S TOP 3 ALBUMS IN 2021", 
+    { question: "UK'S TOP 3 ALBUMS OF 2021", 
     answers: ["FUTURE NOSTALGIA", "30", "=", "VOYAGE"],
     right_answer: "FUTURE NOSTALGIA"},
 

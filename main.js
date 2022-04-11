@@ -3,7 +3,6 @@ import {questions} from "./questions.js";
 const restart = document.getElementById("restart");
 const timer = document.getElementById("countdown")
 const submit = document.getElementById("submit");
-const message = document.getElementById("message");
 
 let question = document.getElementById("question");
 let answers = document.querySelectorAll(".answer");
@@ -28,13 +27,7 @@ const countdown = () => {
             answer.disabled = true;
             answer.innerHTML = "";
         })
-        // answers.style.color = "#FF8F4B";
-    //     document.body.style.backgroundColor = "#FF8F4B";
-    //     document.body.innerHTML = "TIME'S UP";
-    //     document.body.style.alignContent = center;
-    //     document.body.style.fontSize = 74;
-    //     document.body.style.fontFamily = Bungee;
-    //     document.body.style.color = "#03444A";
+        submit.disabled = true;
     }
 }
 
@@ -50,8 +43,8 @@ const startTimer = () => {
 
 startTimer();
 question.innerHTML = questions[currentQuestion].question;
-answers.forEach((answerButton, index) => {
-    answerButton.innerHTML = questions[currentQuestion].answers[index];
+answers.forEach((answer, index) => {
+    answer.innerHTML = questions[currentQuestion].answers[index];
     score.innerHTML = `0/${maximumScore}`;
     })
 
@@ -62,6 +55,8 @@ restart.addEventListener ("click", (e) => {
     countdown();
     score.innerHTML = `0/${maximumScore}`;
     question.innerHTML = questions[0].question
+    question.style.backgroundColor = "#03444A";
+    question.style.color = "#F1BC52";
     currentQuestion = 0;
     answers.forEach((answer, index) => {
         answer.disabled = false;
@@ -86,45 +81,41 @@ answers.forEach(item => {
 submit.addEventListener ("click", (e) => {
     stopTimer()
     if (questions[currentQuestion].right_answer == chosenAnswer) {
-        //if the submitted answer is the right one then show the next question and the next answer
-            currentQuestion++
-            if (currentQuestion < questions.length) {
-                startTimer()
-                question.innerHTML = questions[currentQuestion].question
-                answers.forEach((answer, index) => {
-                    answer.innerHTML = questions[currentQuestion].answers[index]
-                })
-            } else {
-                question.innerHTML = "YOU WON! WELL DONE";
-                question.style.backgroundColor = "#F1BC52";
-                question.style.color = "#00A8A8";
-                submit.disabled = true;
-            }
-        score.innerHTML = `${currentQuestion}/${maximumScore}`;
+        //if the submitted answer is right then show the next question and the next answers
+        currentQuestion++
+        if (currentQuestion < questions.length) {
+            startTimer()
+            question.innerHTML = questions[currentQuestion].question
+            answers.forEach((answer, index) => {
+                answer.innerHTML = questions[currentQuestion].answers[index]
+            })           
         } else {
-        //if the submitted answer is wrong then prompt a GameOver pop-up
-            question.innerHTML = "GAME OVER! TRY AGAIN!";
+            question.innerHTML = "YOU WON! WELL DONE";
             question.style.backgroundColor = "#F1BC52";
-            question.style.color = "#FF8F4B";
+            question.style.color = "#00A8A8";
             submit.disabled = true;
             answers.forEach (answer => {
-                answer.disabled = true;
-                answer.innerHTML = "";
+            answer.disabled = true;
+            answer.innerHTML = "";
             })
         }
+    score.innerHTML = `${currentQuestion}/${maximumScore}`;
+    } else {
+        //if the submitted answer is wrong, Game Over
+        question.innerHTML = "GAME OVER! TRY AGAIN!";
+        question.style.backgroundColor = "#F1BC52";
+        question.style.color = "#FF8F4B";
+        submit.disabled = true;
+        answers.forEach (answer => {
+        answer.disabled = true;
+        answer.innerHTML = "";
+        })
+    }
 })   
         
 
 
-// submit.addEventListener ("click")
-
-// question.innerHTML = questions[questionNumber].question
-// answers.forEach((answerButton, index) => {
-//     answerButton.innerHTML = questions[questionNumber].answers[index]
-// })
 
 
 
-//if the answer is correct then the points are updated and the second question comes up and so on
 
-//if the answer is wrong, game over
