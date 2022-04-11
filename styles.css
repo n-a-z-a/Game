@@ -40,8 +40,9 @@
 }
 
 #question {
+  padding-top: 5vh;
   width: 80vw;
-  height: 20vh;
+  height: 30vh;
   border: 8px solid #00A8A8;
   background-color: #03444A;
   color: #F1BC52;
@@ -49,12 +50,12 @@
   font-size: 48px;
   text-align: center;
   justify-content: center;
-  line-height: 8vh;
+  line-height: 10vh;
 }
 
 .answer {
   width: 80vw;
-  height: 10vh;
+  height: 8vh;
   background-color: #00A8A8;
   color: #F1BC52;
   border: none;
@@ -83,6 +84,7 @@
   margin-top: 3vh;
   font-family: Dosis;
   font-size: 22px;
+  color: #03444A;
 }
 
 .game-button {
@@ -93,12 +95,17 @@
   color: #03444A;
 }
 
+.game-button:hover {
+  background-color: #9AD3DA;
+}
+
 #countdown {
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: Dosis;
   font-size: 32px;
+  color: #03444A;
 }
 
 .cover {

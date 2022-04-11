@@ -21,6 +21,20 @@ const countdown = () => {
     timer.innerHTML--
     if (timer.innerHTML==0) {
         clearInterval(setCountdown)
+        question.innerHTML = "TIME'S UP";
+        question.style.backgroundColor = "#FF8F4B";
+        question.style.color = "#03444A";
+        answers.forEach (answer => {
+            answer.disabled = true;
+            answer.innerHTML = "";
+        })
+        // answers.style.color = "#FF8F4B";
+    //     document.body.style.backgroundColor = "#FF8F4B";
+    //     document.body.innerHTML = "TIME'S UP";
+    //     document.body.style.alignContent = center;
+    //     document.body.style.fontSize = 74;
+    //     document.body.style.fontFamily = Bungee;
+    //     document.body.style.color = "#03444A";
     }
 }
 
@@ -29,29 +43,31 @@ const stopTimer = () => {
 }
 
 const startTimer = () => {
-    timer.innerHTML = 15
-    setCountdown = setInterval(countdown,1500)
+    timer.innerHTML = 15;
+    setCountdown = setInterval(countdown,1500);
 }
 
 
 startTimer();
-question.innerHTML = questions[currentQuestion].question
+question.innerHTML = questions[currentQuestion].question;
 answers.forEach((answerButton, index) => {
     answerButton.innerHTML = questions[currentQuestion].answers[index];
     score.innerHTML = `0/${maximumScore}`;
     })
 
 
-
 restart.addEventListener ("click", (e) => { 
+    submit.disabled = false;
     startTimer();
-    question.innerHTML = questions[0].question
-    answers.forEach((answerButton, index) => {
-        answerButton.innerHTML = questions[0].answers[index];
+    countdown();
     score.innerHTML = `0/${maximumScore}`;
+    question.innerHTML = questions[0].question
+    currentQuestion = 0;
+    answers.forEach((answer, index) => {
+        answer.disabled = false;
+        answer.innerHTML = questions[0].answers[index];
     })
 })  
-
 
 
 //check if the submitted answer is the right one
@@ -75,16 +91,26 @@ submit.addEventListener ("click", (e) => {
             if (currentQuestion < questions.length) {
                 startTimer()
                 question.innerHTML = questions[currentQuestion].question
-                answers.forEach((answerButton, index) => {
-                    answerButton.innerHTML = questions[currentQuestion].answers[index]
+                answers.forEach((answer, index) => {
+                    answer.innerHTML = questions[currentQuestion].answers[index]
                 })
             } else {
-                message.innerHTML = "Congratulations! You've won!"
+                question.innerHTML = "YOU WON! WELL DONE";
+                question.style.backgroundColor = "#F1BC52";
+                question.style.color = "#00A8A8";
+                submit.disabled = true;
             }
         score.innerHTML = `${currentQuestion}/${maximumScore}`;
         } else {
         //if the submitted answer is wrong then prompt a GameOver pop-up
-            message.innerHTML = "Game Over"
+            question.innerHTML = "GAME OVER! TRY AGAIN!";
+            question.style.backgroundColor = "#F1BC52";
+            question.style.color = "#FF8F4B";
+            submit.disabled = true;
+            answers.forEach (answer => {
+                answer.disabled = true;
+                answer.innerHTML = "";
+            })
         }
 })   
         
