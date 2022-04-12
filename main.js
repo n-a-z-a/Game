@@ -114,9 +114,6 @@ submit.addEventListener ("click", (e) => {
 })   
         
 
-// TO DO
-//can't submit without a selected answer
-
 
 
 
