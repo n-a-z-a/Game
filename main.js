@@ -50,9 +50,9 @@ answers.forEach((answer, index) => {
 
 
 restart.addEventListener ("click", (e) => { 
+    stopTimer()
     submit.disabled = false;
     startTimer();
-    countdown();
     score.innerHTML = `0/${maximumScore}`;
     question.innerHTML = questions[0].question
     question.style.backgroundColor = "#03444A";
@@ -74,9 +74,8 @@ answers.forEach(item => {
     })
 })
 
-//the player chooses an answer and submits it
 
-//can't submit without a selected answer
+//the player chooses an answer and submits it
 
 submit.addEventListener ("click", (e) => {
     stopTimer()
@@ -114,7 +113,8 @@ submit.addEventListener ("click", (e) => {
 })   
         
 
-
+// TO DO
+//can't submit without a selected answer
 
 
 
