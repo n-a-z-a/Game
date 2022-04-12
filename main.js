@@ -89,7 +89,7 @@ submit.addEventListener ("click", (e) => {
                 answer.innerHTML = questions[currentQuestion].answers[index]
             })           
         } else {
-            question.innerHTML = "YOU WON! WELL DONE";
+            question.innerHTML = "YOU WON! WELL DONE!";
             question.style.backgroundColor = "#F1BC52";
             question.style.color = "#00A8A8";
             submit.disabled = true;

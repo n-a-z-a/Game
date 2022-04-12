@@ -32,7 +32,7 @@
 #question {
     padding-top: 5vh;
     width: 80vw;
-    height: 30vh;
+    height: 28vh;
     border: 8px solid $color-tertiary;
     background-color: $color-secondary;
     color: $color-primary;
@@ -89,9 +89,6 @@
 }
 
 #countdown{
-    display: flex;
-    align-items:center;
-    justify-content: center;
     font-family: Dosis;
     font-size: 32px;
     color: $color-secondary;

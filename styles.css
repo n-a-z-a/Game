@@ -42,7 +42,7 @@
 #question {
   padding-top: 5vh;
   width: 80vw;
-  height: 30vh;
+  height: 28vh;
   border: 8px solid #00A8A8;
   background-color: #03444A;
   color: #F1BC52;
@@ -100,9 +100,6 @@
 }
 
 #countdown {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-family: Dosis;
   font-size: 32px;
   color: #03444A;
@@ -127,8 +124,8 @@
 }
 
 .bottom {
-  margin-top: 1vh;
-  margin-bottom: 4vh;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
