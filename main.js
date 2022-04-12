@@ -13,7 +13,8 @@ let currentQuestion = 0;
 const maximumScore = questions.length;
 
 
-//countdown
+//15sec countdown
+//it stops when it reaches zero and then a time's up message is displayed and the submit button is disabled
 
 let setCountdown;
 const countdown = () => {
@@ -49,6 +50,7 @@ answers.forEach((answer, index) => {
     })
 
 
+// the restart button resets the countdown and the score and displays the first question with the corresponding options 
 restart.addEventListener ("click", (e) => { 
     stopTimer()
     submit.disabled = false;
@@ -65,33 +67,32 @@ restart.addEventListener ("click", (e) => {
 })  
 
 
-//check if the submitted answer is the right one
+//the player selects an answer, which is then stored 
 
 answers.forEach(item => {
     item.addEventListener ("click", (e) => {
     chosenAnswer = e.target.innerHTML;
-    console.log (chosenAnswer);
     })
 })
 
 
-//the player chooses an answer and submits it
-
+//the player submits the chosen answer
 submit.addEventListener ("click", (e) => {
     stopTimer()
     if (questions[currentQuestion].right_answer == chosenAnswer) {
-        //if the submitted answer is right then show the next question and the next answers
+        //if the submitted answer is right then the next question with the corresponding options is displayed
         currentQuestion++
         if (currentQuestion < questions.length) {
             startTimer()
             question.innerHTML = questions[currentQuestion].question
             answers.forEach((answer, index) => {
                 answer.innerHTML = questions[currentQuestion].answers[index]
-            })           
+            }) 
+        //if the submitted answer is right and it's the last one, then the player wins the game          
         } else {
             question.innerHTML = "YOU WON! WELL DONE!";
             question.style.backgroundColor = "#F1BC52";
-            question.style.color = "#00A8A8";
+            question.style.color = "#03444A";
             submit.disabled = true;
             answers.forEach (answer => {
             answer.disabled = true;
