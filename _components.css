@@ -1,15 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
-* {
-  margin: 0px;
-  padding: 0px;
-  background-color: #F1BC52;
-}
-
 #gameTitle_cover {
   margin-top: 30vh;
   margin-bottom: 15vh;
@@ -106,31 +96,4 @@
   font-family: Dosis;
   font-size: 32px;
   color: #03444A;
-}
-
-.cover {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.game-box {
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-top: 10vh;
-  row-gap: 3vh;
-  font-family: Bungee;
-}
-
-.bottom {
-  margin-top: 1vh;
-  margin-bottom: 4vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  font-family: Bungee;
 }

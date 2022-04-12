@@ -20,7 +20,7 @@ export const questions = [
     right_answer: "RUN"},
 
     { question: "SPOTIFY'S TOP 3 SONGS OF 2020", 
-    answers: ["BAD GUY", "SENORITA", "SUNFLOWER", "SHALLOW"],
+    answers: ["BAD GUY", "SEÑORITA", "SUNFLOWER", "SHALLOW"],
     right_answer: "SHALLOW"}, 
 
     { question: "SONGS BY LANA DEL REY", 
